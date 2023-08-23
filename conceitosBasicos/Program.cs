@@ -34,6 +34,5 @@ calc = new Calculadora();
 aumento = calc.CalculaAumento(inicial, percentual);
 diferenca = calc.CalculaDiferenca(inicial, percentual);
 
-double resultm = Conversor.MetrosMilimetros(1.52);
-double metros = 1.76;
-Console.WriteLine("A medida {0} metros corresponde a {1} milimetros.",metros, Conversor.MetrosMilimetros(1.72));
+Console.WriteLine($"Um aumento de {percentual}%, sobre o salário de R${inicial}, é {diferenca}." +
+    $" O seu novo salário será {aumento}");
