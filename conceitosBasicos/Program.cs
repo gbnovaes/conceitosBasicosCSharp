@@ -20,13 +20,20 @@
 //Console.WriteLine("A medida {0} metros corresponde a {1} milimetros.",metros, Conversor.MetrosMilimetros(1.72));
 
 using conceitosBasicos;
-
 Console.WriteLine("Insira o salário inicial:");
 double inicial = Convert.ToDouble(Console.ReadLine());
-
+while (inicial <= 0) {
+    Console.WriteLine("O salário não pode ser menor que 0.\nInsira um salário válido: ");
+    inicial = Convert.ToDouble(Console.ReadLine());
+}
 Console.WriteLine("Insira o número correspondente aumento percentual (sem o sinal de %):");
 double percentual = Convert.ToDouble(Console.ReadLine());
-double aumento = 0, diferenca;
+while (percentual < 0)
+{
+    Console.WriteLine("A porcentagem não pode ser negativa");
+    percentual = Convert.ToDouble(Console.ReadLine());
+}
+double aumento, diferenca;
 
 Calculadora calc;
 calc = new Calculadora();
@@ -35,4 +42,4 @@ aumento = calc.CalculaAumento(inicial, percentual);
 diferenca = calc.CalculaDiferenca(inicial, percentual);
 
 Console.WriteLine($"Um aumento de {percentual}%, sobre o salário de R${inicial}, é {diferenca}." +
-    $" O seu novo salário será {aumento}");
+    $" O seu novo salário será de R${aumento}");
